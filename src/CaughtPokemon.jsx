@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function CaughtPokemon(props) {
+export default function CaughtPokemon(date) {
   return (
     <>
-      <p>Caught 0 Pokemon on {props.date}</p>
+      <p>Caught 0 Pokemon on {date}</p>
     </>
   );
 }
