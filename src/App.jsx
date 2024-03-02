@@ -1,5 +1,5 @@
-import React from "react"
-import Logo from "./Logo"
+
+import Logo from "./Logo";
 import BestPokemon from "./BestPokemon";
 import CaughtPokemon from "./CaughtPokemon";
 function App() {
@@ -13,11 +13,10 @@ function App() {
   return (
     <div>
       <Logo appName={"Areeb's Pokedex"} />
-      <BestPokemon abilities = {abilitiesList}/>
-      <CaughtPokemon date = {new Date().toLocaleDateString()}/>
+      <BestPokemon abilities={abilitiesList} />
+      <CaughtPokemon date={new Date().toLocaleDateString()} />
     </div>
   );
 }
-
 
 export default App;
