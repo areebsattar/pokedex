@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CaughtPokemon(date) {
+export default function CaughtPokemon({ date }) {
   return (
     <>
       <p>Caught 0 Pokemon on {date}</p>

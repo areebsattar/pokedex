@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Logo(appName) {
+export default function Logo({appName}) {
   return (
     <>
       <header>
