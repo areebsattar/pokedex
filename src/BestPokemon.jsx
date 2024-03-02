@@ -1,5 +1,4 @@
 
-
 export default function BestPokemon({ abilities }) {
   return (
     <div>

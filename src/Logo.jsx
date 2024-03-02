@@ -1,5 +1,5 @@
 
-export default function Logo( {appName} ) {
+export default function Logo( {appName, LogWhenClicked} ) {
   return (
     <>
       <header>
@@ -10,6 +10,3 @@ export default function Logo( {appName} ) {
   );
 }
 
-function LogWhenClicked() {
-  console.log("You just clicked me");
-}
