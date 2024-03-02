@@ -1,4 +1,3 @@
-
 import Logo from "./Logo";
 import BestPokemon from "./BestPokemon";
 import CaughtPokemon from "./CaughtPokemon";
@@ -10,11 +9,31 @@ function App() {
     "Slam",
     "Tail Whip",
   ];
+
+  const listOfPokemon = [
+    "Pikachu",
+    "Celebi",
+    "Snorlax",
+    "Eevee",
+    "Charizard",
+    "Ditto",
+    "Charmander",
+    "Squirtle",
+    "Mewtwo",
+    "Bulbasaur",
+    "Mew",
+    "Onix",
+    "Meowth",
+  ];
+
   return (
     <div>
       <Logo appName={"Areeb's Pokedex"} LogWhenClicked={LogWhenClicked} />
       <BestPokemon abilities={abilitiesList} />
-      <CaughtPokemon date={new Date().toLocaleDateString()} />
+      <CaughtPokemon
+        date={new Date().toLocaleDateString()}
+        listOfPokemon={listOfPokemon}
+      />
     </div>
   );
 }
@@ -22,6 +41,5 @@ function App() {
 function LogWhenClicked() {
   console.log("You just clicked me");
 }
-
 
 export default App;

@@ -1,18 +1,28 @@
 import { useState } from "react";
 
-export default function CaughtPokemon({ date }) {
-  const [Caught, setCaught] = useState(0);
+export default function CaughtPokemon({ date, listOfPokemon }) {
+  const [caught, setCaught] = useState([]);
 
-  function CatchPokemon() {
-    setCaught(Caught + 1);
+  function catchPokemon() {
+    setCaught([...caught, showRandomPokemon()]);
+  }
+
+  function showRandomPokemon() {
+    const randomIndex = Math.floor(Math.random() * listOfPokemon.length);
+    return listOfPokemon[randomIndex];
   }
 
   return (
     <>
-      <button onClick={CatchPokemon}>Catch a Pokemon</button>
+      <button onClick={catchPokemon}>Catch a Pokemon</button>
       <p>
-        Caught {Caught} Pokemon on {date}
+        Caught {caught.length} Pokemon on {date}
       </p>
+      <ul>
+        {caught.map((pokemon, id) => (
+          <li key={id}>{pokemon}</li>
+        ))}
+      </ul>
     </>
   );
 }
