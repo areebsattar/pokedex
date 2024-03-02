@@ -1,8 +1,18 @@
+import { useState } from "react";
 
 export default function CaughtPokemon({ date }) {
+  const [Caught, setCaught] = useState(0);
+
+  function CatchPokemon() {
+    setCaught(Caught + 1);
+  }
+
   return (
     <>
-      <p>Caught 0 Pokemon on {date}</p>
+      <button onClick={CatchPokemon}>Catch a Pokemon</button>
+      <p>
+        Caught {Caught} Pokemon on {date}
+      </p>
     </>
   );
 }
