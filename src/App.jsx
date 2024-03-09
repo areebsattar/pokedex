@@ -1,6 +1,7 @@
 import Logo from "./Logo";
 import BestPokemon from "./BestPokemon";
 import CaughtPokemon from "./CaughtPokemon";
+import PokemonMoves from "./PokemonMoves";
 function App() {
   const abilitiesList = [
     "Lightning Rod",
@@ -34,6 +35,7 @@ function App() {
         date={new Date().toLocaleDateString()}
         listOfPokemon={listOfPokemon}
       />
+      <PokemonMoves />
     </div>
   );
 }
