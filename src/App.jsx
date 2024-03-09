@@ -2,6 +2,7 @@ import Logo from "./Logo";
 import BestPokemon from "./BestPokemon";
 import CaughtPokemon from "./CaughtPokemon";
 import PokemonMovesSelector from "./PokemonMovesSelector";
+import PokemonCity from "./PokemonCity";
 function App() {
   const abilitiesList = [
     "Lightning Rod",
@@ -36,6 +37,7 @@ function App() {
         listOfPokemon={listOfPokemon}
       />
       <PokemonMovesSelector />
+      <PokemonCity />
     </div>
   );
 }
