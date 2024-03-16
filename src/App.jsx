@@ -3,6 +3,9 @@ import BestPokemon from "./BestPokemon";
 import CaughtPokemon from "./CaughtPokemon";
 import PokemonMovesSelector from "./PokemonMovesSelector";
 import PokemonCity from "./PokemonCity";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import PokemonInfo from "./PokemonInfo";
+
 function App() {
   const abilitiesList = [
     "Lightning Rod",
@@ -12,33 +15,40 @@ function App() {
     "Tail Whip",
   ];
 
-  const listOfPokemon = [
-    "Pikachu",
-    "Celebi",
-    "Snorlax",
-    "Eevee",
-    "Charizard",
-    "Ditto",
-    "Charmander",
-    "Squirtle",
-    "Mewtwo",
-    "Bulbasaur",
-    "Mew",
-    "Onix",
-    "Meowth",
-  ];
-
   return (
-    <div>
+    <Router>
+        <nav>
+          <Link to="/best-pokemon">Best Pokemon</Link>
+        </nav>
+        <nav>
+          <Link to="/caught-pokemon">Caught Pokemon</Link>
+        </nav>
+        <nav>
+          <Link to="/pokemon/Pikachu">Pikachu</Link>
+        </nav>
+        <nav>
+          <Link to="/pokemon/Bulbasaur">Bulbasaur</Link>
+        </nav>
+        <nav>
+          <Link to="/pokemon/Onix">Onix</Link>
+        </nav>
       <Logo appName={"Areeb's Pokedex"} LogWhenClicked={LogWhenClicked} />
-      <BestPokemon abilities={abilitiesList} />
-      <CaughtPokemon
-        date={new Date().toLocaleDateString()}
-        listOfPokemon={listOfPokemon}
-      />
-      <PokemonMovesSelector />
-      <PokemonCity />
-    </div>
+      <Routes>
+        <Route
+          path="/best-pokemon"
+          element={<BestPokemon abilities={abilitiesList} />}
+        />
+        <Route
+          path="/caught-pokemon"
+          element={<CaughtPokemon date={new Date().toLocaleDateString()} />}
+        />
+        <Route path="pokemon-moves" element={<PokemonMovesSelector />}>
+          Pokemon Moves Selector
+        </Route>
+        <Route path="pokemon-city" element={<PokemonCity />}>Pokemon City</Route>
+        <Route path="/pokemon/:name" element={<PokemonInfo />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
